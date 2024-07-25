@@ -1,4 +1,4 @@
-# wired-compass-PD-controller-for-TI-RSLK
+# Wired Compass PD Controller for TI-RSLK
 Author: Curran Flanders and Niko Danas
 
 Completion Date: 04/18/2024
