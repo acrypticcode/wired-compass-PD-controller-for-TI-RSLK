@@ -140,26 +140,7 @@ int main(void)
 
             // Mapping ADC value to desired speed
             // Assuming the ADC range is 0 to 16383 (14-bit) and the speed is mapped between -50% to +50% PWM duty cycle
-            /*desiredSpeed = ((float)adcSpeed * 100 / 16383) - 50; // Convert to -50 to 50 range
-            theta = ((float)adcTurn * 180 / 16383) - 90;
-            if (theta < 0){
-                absTheta = (-1*theta);
-            }
-            else{
-                absTheta = theta;
-            }
-
-            if (absTheta < 15){
-                differentialSpeed = 0;
-            }
-            else{
-                differentialSpeed = vmax*(absTheta-15)/75;
-            }
-            */
-
             //Starting wheel speed for the left wheel
-
-
             if (theta < 0){
                 desiredLeft = desiredSpeed - differentialSpeed;
                 desiredRight = desiredSpeed + differentialSpeed;
@@ -256,14 +237,6 @@ int main(void)
 
             TA0_ccr3.compareValue = CompareValueRight;
             Timer_A_initCompare(TIMER_A0_BASE, &TA0_ccr3);
-
-
-            //printf("%1.3f-----------%u\r\n", desiredLeft, CompareValueLeft*100/999);
-            //printf("%1.3f-----------%1.3f\r\n", desiredLeft, correctedSpeedLeft);
-            //printf("%1.3f \r\n", measuredSpeedLeft);
-            //printf("%1.3f         %1.3f         %1.3u          %1.3u\r\n", desiredLeft, desiredRight, CompareValueLeft, CompareValueRight);
-            //printf("%1.3f           %1.3f           %1.3f\r\n", desiredSpeed, theta, differentialSpeed);
-
         }
     }
 }
@@ -419,20 +392,6 @@ uint16_t readCompass(void){
     heading = heading+comp[1];
     return heading;
 }
-
-
-/*int16_t readAccel(void){
-    int8_t acc[2];
-
-    I2C_readData(EUSCI_B1_BASE, 0x60, 14, acc, 2 );
-
-    acc_data = acc[0];
-    acc_data = acc_data << 8;
-    acc_data = acc_data + acc[1];
-    return acc_data;
-}
-
-*/
 
 uint16_t readCompass2(void){
     uint8_t comp2[2];
