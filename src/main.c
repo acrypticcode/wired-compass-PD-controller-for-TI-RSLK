@@ -1,21 +1,4 @@
-/* ENGR-2350 Lab 4 Template
-//Nicholas Danas and Curran Flanders
- * 662055547 and 662017081
- *
-// README!!!!!
-// README!!!!!
-// README!!!!!
-//
-// This template project has all initializations required to both control the motors
-// via PWM and measure the speed of the motors. The PWM is configured using a 24 kHz
-// period (1000 counts). The motors are initialized to be DISABLED and in FORWARD mode.
-// The encoders measurements are stored within the variables Tach_R and Tach_L for the
-// right and left motors, respectively. A maximum value for Tach_R and Tach_L is
-// enforced to be 1e6 such that when the wheel stops, a reasonable value for the
-// encoders exists: a very large number that can be assumed to be stopped.
-// Finally, a third timer is added to measure a 100 ms period for control system
-// timing. The variable run_control is set to 1 each period and then reset in the main.
-*/
+//By Nicholas Danas and Curran Flanders
 
 #include "engr2350_msp432.h"
 
